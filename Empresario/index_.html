@@ -1,0 +1,418 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Caminar by TEMPLATED</title>
+	<meta charset="utf-8">
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/main2.css">
+</head>
+<script>
+	function cerrar() {
+		window.location = ("../Login.html");
+	}
+	function inicio() { window.location = "index_.html" }
+	function Perfil() { window.location = "Perfil.php" }
+	function Trabajos() { window.location = "Trabajos.html" }
+
+</script>
+<style>
+	.eliminar {
+	transition: 2s;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	position: fixed;
+	z-index: 30	;
+	justify-content: center;
+	place-items: center;
+	display: none;
+	backdrop-filter: blur(30px);
+	padding: 10px;
+	color: rgb(0, 0, 0);
+	border: none;
+	border: 1px solid rgb(221, 221, 221);
+	border-bottom: 7px solid grey;
+	border-radius: 20px;
+}
+
+.eliminar input{
+	color: white;
+	border: 0.5px solid grey;
+	border-bottom: 3px solid grey;
+	margin: 4px;
+	background-color: rgb(192, 192, 192, 0.3);
+}
+</style>
+<!--***************************************************************************  ///OFRECER -->
+<form method="post" action="php/crear_trabajo.php" class="ofrecer over-y" style="max-height: 600px;">
+	<h1 style="color: rgb(255, 255, 255);text-shadow: 0 0 12px black;">Crear Trabajo</h1>
+
+	<div>
+		<label>Area<input pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Solo letras, sin números" type="text" required placeholder="Area" name="area"></label>
+		<label for="">Descripción
+			<textarea required placeholder="Tareas que realizaba en su espacio laboral ultimo" name="descripcion"
+				style="width: 400px;max-width: 400px;max-height: 100px; height: 100px;"></textarea>
+		</label>
+		<label for="">
+			<select name="pago" id="">
+				<option value="no">Seleccione una opción</option>
+				<option value="Fijo">Fijo</option>
+				<option value="Salario">Mensual</option>
+			</select>
+		</label>
+		<label>Monto $<input pattern="[0-9]+" title="Solo numero, sin letras" type="text" required placeholder="Monto" name="monto"></label>
+		<label for="">Moneda
+			<select id="moneda" name="moneda">
+				<option value="" disabled selected>Selecciona una opción</option>
+				<option value="MXN">Peso Mexicano (MXN)</option>
+				<option value="USD">Dólar Estadounidense (USD)</option>
+				<option value="EUR">Euro (EUR)</option>
+				<option value="JPY">Yen Japonés (JPY)</option>
+				<option value="GBP">Libra Esterlina (GBP)</option>
+				<option value="AUD">Dólar Australiano (AUD)</option>
+				<option value="CAD">Dólar Canadiense (CAD)</option>
+				<option value="CHF">Franco Suizo (CHF)</option>
+				<option value="CNY">Yuan Chino (CNY)</option>
+				<option value="INR">Rupia India (INR)</option>
+				<option value="BRL">Real Brasileño (BRL)</option>
+				<option value="RUB">Rublo Ruso (RUB)</option>
+			</select>
+		</label>
+	</div>
+
+	<fieldset>
+		<legend style="color: white;">Confirmar</legend>
+		<label>Nombre<input pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Solo letras, sin números" type="text" name="usuario"></label>
+		<label>Contraseña<input pattern="[0-9]+" title="Solo numero, sin letras" type="password" name="contraseña"></label>
+	</fieldset>
+
+	<input type="submit" value="ACEPTAR" style="background: none;background-color: rgb(114, 114, 114); color: black;">
+	<h4 onclick="cance()" align="center"
+		style="cursor: pointer;border: solid rgb(87, 87, 87) 1px;border-radius: 10px;background-color: rgb(133, 133, 133);color: rgb(255, 255, 255);padding: 10px;">
+		CANCELAR</h4>
+
+	<script>
+		function cance() {
+			document.querySelector('.ofrecer').style.display = 'none';
+		}
+	</script>
+</form>
+<!--***************************************************************************  ///OFRECER-->
+<!--***************************************************************************  ///empresa -->
+<form method="post" action="php/crea_empresa.php" class="vacante">
+	<h1 style="color: rgb(255, 255, 255) !important;text-shadow: 0 0 12px black;">Crear Empresa</h1>
+
+	<label>Nombre de la empresa<input pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Solo letras, sin números" type="text" required placeholder="Nombre de la empresa" name="empresa"></label>
+
+	<fieldset>
+		<legend>Confirmar</legend>
+		<label>Nombre<input pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Solo letras, sin números" type="text" required placeholder="Nombre" name="usuario"></label>
+		<label>Contraseña<input pattern="[0-9]+" title="Solo numero, sin letras" type="password" required placeholder="Contraseña" name="contraseña"></label>
+	</fieldset>
+
+	<input type="submit" value="ACEPTAR" style="background: none;background-color: rgb(114, 114, 114); color: black;">
+	<h4 onclick="cancelarw()" align="center"
+		style="cursor: pointer;border: solid rgb(87, 87, 87) 1px;border-radius: 10px;background-color: rgb(133, 133, 133);color: rgb(255, 255, 255);padding: 10px;">
+		CANCELAR</h4>
+
+	<script>
+		function cancelarw() {
+			document.querySelector('.vacante').style.display = 'none';
+		}
+	</script>
+</form>
+<!--******************************************************************************************************ELIMINARRRR***-->
+<form method="post" action="php/borrar_empresa.php" class="eliminar">
+	<h1 style="color: rgb(255, 255, 255) !important;text-shadow: 0 0 12px black;">Eliminar Empresa</h1>
+
+	<fieldset>
+		<legend style="color: white;">Confirmar</legend>
+		<label>Nombre<input pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Solo letras, sin números" type="text" required placeholder="Nombre" name="usuario"></label>
+		<label>Contraseña<input pattern="[0-9]+" title="Solo numero, sin letras" type="password" required placeholder="Contraseña" name="contraseña"></label>
+	</fieldset>
+
+	<input type="submit" value="ACEPTAR" style="background: none;background-color: rgb(114, 114, 114); color: black;">
+	<h4 onclick="cancelarwa()" align="center"
+		style="cursor: pointer;border: solid rgb(87, 87, 87) 1px;border-radius: 10px;background-color: rgb(133, 133, 133);color: rgb(255, 255, 255);padding: 10px;">
+		CANCELAR</h4>
+
+	<script>
+		function cancelarwa() {
+			document.querySelector('.eliminar').style.display = 'none';
+		}
+	</script>
+</form>
+<!--*********************************************************************************************************-->
+<body>
+	<header class="indice1">
+		<button onclick="cerrar()" class="boton-header" style="margin: 5px;">CERRAR SESIÓN </button>
+		<img src="../Img/mias/Recurso 1 .png" style="width: 35px;height: 35px;margin: 6px;">
+		<input type="text" style="border: solid rgb(0, 0, 0,0.2) 1px;margin: 5px;">
+		<button class="btns-indice1" onclick="inicio()" style="background-color: azure;color: black;">Inicio</button>
+		<button class="btns-indice1" onclick="Perfil()">Perfil</button>
+		<button class="btns-indice1" onclick="Trabajos()">Trabajo</button>
+	</header>
+	<!--!-----------------------------------------  -->
+	<header id="header">
+		<div class="logo">
+			<p style="font-size: 60px;padding: 20px;color: white;backdrop-filter: blur(30px); border-radius: 10px;">Pon
+				a trabajar ya tus proyectos<span>¡Somos la mejor herramienta!</span> </p>
+		</div>
+	</header>
+
+	<section id="main">
+		<div class="inner">
+			<section id="three" class="wrapper">
+				<div class="spotlight">
+					<div class="image flush"><img
+							src="../Img/mias/Flux_Dev_Escena_profesional_de_ambiente_empresarial_moderno_pe_1.jpg"
+							alt="" width="700" height="525">
+					</div>
+					<div class="inner">
+						<h3>¿Y que trabajos tienes en mente ofrecer?</h3>
+						<p class="over-y" style="max-height: 300px;">
+							✅ Descripción para la pregunta: "¿Y qué trabajos tienes en mente?" <br>
+							Esta pregunta busca entender mejor los intereses, habilidades y aspiraciones laborales
+							del<br>
+							usuario, para ofrecerle vacantes más relevantes y personalizadas. Sirve como guía para<br>
+							ayudarlo a definir su objetivo profesional dentro de la plataforma.<br><br>
+
+							🗣️ Versión mejorada de la pregunta para mostrar en tu sitio:<br>
+							¿Qué tipo de empleo estás buscando actualmente?<br>
+							Cuéntanos qué tienes en mente: puede ser un cargo específico, un área de trabajo, una<br>
+							industria o incluso un tipo de contrato. Esto nos ayuda a mostrarte las mejores<br>
+							oportunidades para ti.<br><br>
+
+							🧠 Ejemplos que puedes mostrar como ayuda contextual:<br>
+							“Quiero trabajar como diseñador gráfico remoto”<br>
+							“Estoy buscando un puesto de atención al cliente”<br>
+							“Me interesan trabajos part-time en el área administrativa”<br>
+							“Busco algo en logística o manejo de almacén”<br>
+							“Tengo experiencia como desarrollador web y quiero seguir creciendo en ese campo”<br><br>
+
+							💬 ¿Para qué sirve esta pregunta en tu plataforma?<br>
+							Para filtrar vacantes según los intereses reales del usuario<br>
+							Para personalizar recomendaciones de empresas o puestos<br>
+							Para ayudar al usuario a reflexionar sobre su perfil laboral<br>
+							Para crear matching inteligente con vacantes y empresas afines<br>
+
+
+						</p>
+						<button style="color: black;" onclick="ofrecer()">Crear Trabajo</button>
+					</div>
+					<script>
+						function ofrecer() {
+							document.querySelector('.ofrecer').style.display = 'grid';
+						}
+					</script>
+				</div>
+				<div class="spotlight">
+					<div class="image flush"><img
+							src="../Img/mias/Flux_Dev_Ambiente_empresarial_moderno_sin_presencia_humana_esc_3.jpg"
+							alt="" width="700" height="525">
+					</div>
+					<div class="inner">
+						<h3>¿Y la empresa tiene buen nombre?</h3>
+						<p class="over-y" style="max-height: 300px;">
+							🔍 Componentes clave de una empresa <br>
+							Objetivo<br>
+							Su propósito principal es generar valor, ya sea económico, social o ambas cosas.<br>
+
+							Puede tener fines de lucro (como las empresas privadas) o no lucrativos (como fundaciones o<br>
+							cooperativas).<br><br>
+
+							Organización<br>
+							Tiene una estructura jerárquica o funcional definida (dirección, gerencia, departamentos).<br><br>
+
+							Requiere planificación, coordinación y control de actividades.<br><br>
+
+							Recursos<br>
+							Humanos: empleados, directivos, colaboradores.<br>
+
+							Materiales: instalaciones, herramientas, insumos.<br><br>
+
+							Financieros: capital propio o ajeno, inversiones.<br><br>
+
+							Tecnológicos: software, maquinaria, sistemas de información.<br><br>
+
+							Actividad económica<br>
+							Produce bienes tangibles (como alimentos o maquinaria) o servicios intangibles (como<br>
+							asesoría, educación, tecnología).<br><br>
+
+							Opera dentro de un sector: primario (agricultura), secundario (industria), terciario<br>
+							(servicios), o cuaternario (conocimiento).<br><br>
+
+							Identidad jurídica<br>
+							Tiene un reconocimiento legal, puede ser una persona jurídica (como una sociedad anónima) o<br>
+							física (una persona con actividad empresarial).<br>
+
+							Está sujeta a normativas fiscales, laborales y comerciales.<br>
+						</p>
+						<button style="color: black; margin: 3px;" onclick="crear_empresa()">Crear Empresa</button>
+						<button style="color: black;" onclick="eli()">Eliminar</button>
+					</div>
+					<script>
+						function crear_empresa() {
+							document.querySelector('.vacante').style.display = 'grid';
+						}
+						function eli() {
+							document.querySelector('.eliminar').style.display = 'grid';
+						}
+					</script>
+				</div>
+				<!--? --------------------------------------------------------------------------------------- -->
+				<div class="spotlight alt">
+					<div class="image flush"><img
+							src="../Img/mias/Flux_Dev_A_professional_workspace_set_within_a_calm_dark_turqu_2.jpg"
+							alt="" width="700" height="525"></div>
+					<div class="inner">
+						<h3 style="text-align: left;color: white;">¿Por qué no has publicado tus vacantes?</h3>
+						<p class="over-y" style="max-height: 300px;color: white;text-align: left;">
+							✅ Versión explicativa de la pregunta: "¿Por qué no has publicado tus vacantes?" <br>
+							Publicar tus vacantes es el primer paso para encontrar el talento que tu empresa necesita.
+							<br>
+							Cuéntanos si hay algo que te ha detenido: ¿aún no defines el perfil del puesto?, ¿estás <br>
+							esperando autorización?, ¿necesitas apoyo para redactar la vacante? <br>
+							Saber esto nos permite ayudarte mejor y optimizar tu proceso de reclutamiento.<br><br>
+
+							💬 Ejemplos de respuesta que puedes sugerir:<br>
+							“Estoy esperando aprobación del área de Recursos Humanos”<br>
+
+							“Todavía no tengo claro el perfil del candidato”<br>
+
+							“Necesito ayuda para crear una vacante atractiva”<br>
+
+							“Estoy probando la plataforma antes de publicar”<br>
+
+							“Quiero ver candidatos antes de publicar algo”<br><br>
+
+							🎯 ¿Para qué sirve esta pregunta en tu plataforma?<br>
+							Para detectar posibles barreras y ofrecer soluciones rápidas<br>
+
+							Para activar usuarios empresariales inactivos<br>
+
+							Para personalizar mensajes de ayuda o asesoría automatizada<br>
+
+							Para mejorar la experiencia de uso en la publicación de vacantes<br>
+						</p>
+						<button style="color: black;"><i style="text-decoration:line-through;color: grey;">I N F O R M A
+								R</i></button>
+					</div>
+					<script>
+						function vacante() {
+							document.querySelector('.vacante').style.display = 'grid';
+						}
+					</script>
+				</div>
+			</section>
+			<!--*-------------------------------------------------------------------------------------------------------->
+			<section id="one" class="wrapper style1">
+				<div class="image fit flush">
+					<img src="../Img/mias/copia.jpg" alt="" width="1177" height="443">
+				</div>
+				<header class="special">
+					<h2>RECOMANDECIONES DE USO DE LA APP</h2>
+					<p>Siempre es de cometer errores, por que si no hubiera errores, tu IQ is GOD</p>
+				</header>
+				<div class="content">
+					🔎 Explora y postula con estrategia <br>
+					Revisa diariamente las vacantes nuevas para no perder oportunidades.<br>
+					Filtra empresas con más vacantes para tener más chances de ser contratado.<br>
+					Explora empresas por sectores y guarda tus favoritas.<br>
+					Activa las notificaciones para recibir alertas de empleo al instante.<br>
+					Postula rápido a las vacantes activas, ¡el tiempo es clave!<br>
+					Usa palabras clave precisas al buscar empleos para mejores resultados.<br><br>
+
+					👤 Optimiza tu perfil<br>
+					Completa tu perfil al 100% para destacar entre otros candidatos.<br>
+					Agrega una foto profesional que transmita confianza.<br>
+					Incluye logros concretos en tus experiencias laborales.<br>
+					Actualiza tu perfil cada semana, incluso si no has cambiado de empleo.<br>
+					Muestra tus habilidades con claridad (tecnológicas, blandas, idiomas, etc.).<br>
+					Agrega enlaces a tu portafolio, CV online o LinkedIn.<br><br>
+
+					📄 Mejora tu currículum desde el sitio<br>
+					Utiliza nuestras herramientas para crear o actualizar tu CV.<br>
+					Guarda varios currículums adaptados a diferentes áreas.<br>
+					Revisa tu ortografía y gramática cuidadosamente.<br>
+					Resalta tus logros con datos medibles (ej. “Aumenté ventas un 20%”).<br>
+					Incluye cursos, voluntariados y proyectos personales relevantes.<br><br>
+
+					💼 Prepárate para postular y vender tus servicios<br>
+					Revisa descripciones de vacantes con atención.<br>
+					Personaliza tu currículum para cada vacante que apliques.<br>
+					Practica tus entrevistas con nuestras plantillas y simuladores (si los tienes).<br>
+					Prepara propuestas para vender tus servicios desde la sección de trabajos.<br>
+					Agrega precios claros si ofreces trabajos o freelancing.<br>
+					Utiliza testimonios o casos previos para ganar confianza de empleadores.<br><br>
+
+					🏢 Conoce las empresas antes de aplicar<br>
+					Revisa el perfil de la empresa antes de postularte.<br>
+					Lee opiniones de otros usuarios si están disponibles.<br>
+					Investiga la misión, cultura y valores para ver si se alinean contigo.<br>
+					Guarda las empresas que te interesan para aplicar cuando haya vacantes.<br><br>
+
+					📈 Haz seguimiento de tu crecimiento<br>
+					Monitorea el estado de tus postulaciones desde tu perfil.<br>
+					Evalúa en qué tipo de empleos tienes más éxito.<br>
+					Actualiza tus habilidades según las vacantes más demandadas.<br>
+					Solicita retroalimentación si no fuiste seleccionado.<br><br>
+
+					🧠 Consejos extra para destacar<br>
+					Sé constante: aplicar a muchos empleos aumenta tus chances.<br>
+					Adapta tu CV a cada país o región si aplicas internacionalmente.<br>
+					Invierte tiempo en aprender nuevas habilidades (tecnológicas, idiomas, etc.).<br>
+					Redacta mensajes personalizados al enviar tu aplicación.<br>
+					Muestra actitud positiva en tu perfil, incluso en tiempos difíciles.<br><br>
+
+					🔐 Seguridad y confianza<br>
+					Nunca pagues por postular a una vacante.<br>
+					Verifica siempre que los empleadores sean legítimos.<br>
+					Reporta cualquier comportamiento sospechoso en la plataforma.<br><br>
+
+					💬 Aprovecha la comunidad<br>
+					Participa en foros o chats si están disponibles.<br>
+					Sigue a empresas o usuarios que te inspiren.<br>
+					Comparte tips o recursos si puedes ayudar a otros.<br><br>
+
+					🛠️ Explora más funciones de la plataforma<br>
+					Usa el buscador avanzado para vacantes específicas.<br>
+					Guarda tus búsquedas frecuentes para ahorrar tiempo.<br>
+					Explora cursos y contenidos que te ayuden a mejorar tu empleabilidad.<br>
+					Utiliza nuestras herramientas para comparar ofertas o empresas.<br>
+					Agrega una carta de presentación directamente desde tu perfil.<br><br>
+
+					🧭 Motivación final<br>
+					No te desanimes si no obtienes respuesta inmediata.<br>
+					Recuerda: encontrar trabajo es un trabajo. ¡Sé constante!<br><br>
+
+					Cree en tu valor. Tu momento llegará si te preparas y eres activo.<br>
+				</div>
+			</section><!-- Two -->
+		</div>
+	</section>
+
+
+	<footer id="footer">
+		<div class="container">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.poptrox.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+
+</html>

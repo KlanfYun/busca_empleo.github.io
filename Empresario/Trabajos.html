@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Perfil</title>
+	<meta charset="utf-8">
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/main2.css">
+</head>
+<script>
+	function cerrar() {
+		window.location = ("../Login.html");
+	}
+	function inicio() { window.location = "index_.html" }
+	function Perfil() { window.location = "Perfil.php" }
+	function Trabajos() { window.location = "Trabajos.html" }
+</script>
+<!--***************************************************************************  admini-->
+<form method="post" action="php/consultar_trabajos.php" class="admini">
+
+	   <fieldset>
+        <legend style="color: rgb(255, 255, 255);">Administrar Trabajos </legend>
+        <div class="dis-flex">
+            <label style="color: white;">Nombre<input pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Solo letras, sin números" type="text" required placeholder="Nombre" name="usuario"></label>
+            <label style="color: white;">Contraseña<input pattern="[0-9]+" title="Solo numero, sin letras"  type="text"  required placeholder="Contraseña" name="contraseña"></label>
+        </div>
+    </fieldset>
+
+	<input type="submit" value="Revisar" style="background: none;background-color: rgb(114, 114, 114); color: black;">
+	<h4 onclick="cancelar2()" align="center"
+		style="cursor: pointer;border: solid rgb(87, 87, 87) 1px;border-radius: 10px;background-color: rgb(133, 133, 133);color: rgb(255, 255, 255);padding: 10px;">
+		CANCELAR</h4>
+	<script>
+		function cancelar2() {
+			document.querySelector('.admini').style.display = 'none';
+		}
+		function CURRICULUM() {
+			document.querySelector('.admini').style.display = 'grid';
+		}
+	</script>
+</form>
+<!--***************************************************************************  asas-->
+<!--***************************************************************************  admini-->
+<form method="post" action="../php/Perfil.php" class="vaca">
+	<h1 style="color: white;text-shadow: 0 0 13px black;">Administrar Vacantes</h1>
+
+	<fieldset>
+		<legend style="color: rgb(255, 255, 255);">Vacantes</legend>
+		<div class="dis-flex">
+
+		</div>
+	</fieldset>
+
+	<input type="submit" value="Eliminar" style="background: none;background-color: rgb(114, 114, 114); color: black;">
+	<input type="submit" value="Modificar" style="background: none;background-color: rgb(114, 114, 114); color: black;">
+	<input type="submit" value="Ingresar" style="background: none;background-color: rgb(114, 114, 114); color: black;">
+	<h4 onclick="cancelar3()" align="center"
+		style="cursor: pointer;border: solid rgb(87, 87, 87) 1px;border-radius: 10px;background-color: rgb(133, 133, 133);color: rgb(255, 255, 255);padding: 10px;">
+		CANCELAR</h4>
+	<script>
+		function cancelar3() {
+			document.querySelector('.vaca').style.display = 'none';
+		}
+		function vacante() {
+			document.querySelector('.vaca').style.display = 'grid';
+		}
+	</script>
+</form>
+<!--***************************************************************************  asas-->
+<!-- ?ssddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd bodyyyyy -->
+
+<body>
+	<header class="indice1">
+		<button onclick="cerrar()" class="boton-header" style="margin: 5px;">CERRAR SESIÓN </button>
+		<img src="../Img/mias/Recurso 1 .png" style="width: 35px;height: 35px;margin: 6px;">
+		<input type="text" style="border: solid rgb(0, 0, 0,0.2) 1px;margin: 5px;">
+		<button class="btns-indice1" onclick="inicio()">Inicio</button>
+		<button class="btns-indice1" onclick="Perfil()" >Perfil</button>
+		<button class="btns-indice1" onclick="Trabajos()" style="background-color: azure;color: black;">Trabajo</button>
+	</header>
+
+	<header id="header">
+		<div class="logo" style="display: flex;justify-content: center;">
+			<p style="font-size: 60px;padding: 20px; color: white;">🏛️ Administra tus trabajos</p>
+		</div>
+	</header>
+	<!--!-----------------------------------------  -->
+	<section id="main">
+		<div class="inner">
+			<section id="three" class="wrapper">
+				<div class="spotlight alt">
+					<div class="image flush"><img
+							src="../Img/mias/Flux_Dev_A_professional_workspace_set_within_a_calm_dark_turqu_1.jpg"
+							alt="" width="700" height="525">
+					</div>
+					<div class="inner">
+						<h3 style="text-align: left;color: white;">Administrar Trabajos</h3>
+						<p style="text-align: left;color: white;">
+							🗂️ Administrar Trabajos - Descripción <br>
+							Desde aquí puedes gestionar todas las vacantes publicadas por tu empresa.<br>
+							Edita, pausa o elimina ofertas de empleo, revisa el rendimiento de cada publicación y
+							haz<br>
+							seguimiento a los candidatos que han postulado.<br>
+							Mantén tus oportunidades laborales actualizadas y optimizadas para atraer al mejor
+							talento.<br><br>
+
+							✅ Opcional: con tono más amigable<br>
+							Administra fácilmente tus vacantes activas.<br>
+							Aquí puedes actualizarlas, revisar postulaciones y asegurarte de que cada oferta esté
+							dando<br>
+							los resultados que buscas.<br>
+						</p>
+						<button style="color: black;" onclick="CURRICULUM()">REVISAR</button>
+					</div>
+			</section><!--*---------------------------------------------------------------------------------  -->
+			<section id="three" class="wrapper">
+				<div class="spotlight">
+					<div class="image flush"><img
+							src="../Img/mias/Flux_Dev_Ambiente_empresarial_moderno_sin_presencia_humana_esc_3.jpg"
+							alt="" width="700" height="525">
+					</div>
+					<div class="inner">
+						<h3 style="text-align: left;color: rgb(0, 0, 0);">Administrar Vacantes</h3>
+						<p style="text-align: left;color: rgb(0, 0, 0);">
+							🧩 Administrar Vacantes - Descripción para guiar a tus usuarios <br>
+							Aquí podrás visualizar y gestionar todas las vacantes que has creado.<br>
+							Edita información, actualiza requisitos, publica o desactiva ofertas según tus necesidades.<br>
+							También puedes monitorear cuántas personas han postulado a cada vacante y realizar<br>
+							seguimiento a los candidatos en tiempo real.<br>
+							Mantén tus vacantes organizadas y al día para atraer al mejor talento de forma eficiente.<br><br>
+
+							✅ Versión corta (si necesitas algo más breve):<br>
+							Administra todas tus vacantes activas desde un solo lugar. Edita, actualiza, pausa o revisa<br>
+							el estado de tus ofertas y gestiona a los postulantes fácilmente.<br><br>
+						</p>
+						<button style="color: black;"><i style="text-decoration:line-through;color: grey;">REVISAR</button>
+					</div>
+			</section>
+		</div>
+	</section>
+
+
+	<footer id="footer">
+		<div class="container">
+			<ul class="icons">
+				<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.poptrox.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<a href="../Trabajos.html">Regresar</a>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+
+<script>
+    function regresar() {
+        window.location = "Login.html";
+    }
+</script>
+
+<style>
+    .boton:hover {
+        background-color: rgb(255, 255, 255, 0.5);
+    }
+
+    h1 {
+        font-size: 2rem;
+        color: #000000;
+        text-align: center;
+    }
+
+    .inputbox {
+        position: relative;
+        margin: 10px 0;
+        max-width: 310px;
+        border-bottom: 2px solid #fff;
+    }
+
+    .inputbox input {
+        width: 100%;
+        height: 60px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        padding: 0 35px 0 5px;
+    }
+
+    .forget {
+        margin: 35px 0;
+        font-size: 0.85rem;
+        color: wheat;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+        color: #000000;
+    }
+
+    body {
+        background-image: url("Img/mias/Flux_Dev_Ambiente_empresarial_moderno_sin_presencia_humana_esc_3.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-size: cover;
+    }
+
+    section {
+        position: relative;
+        max-width: 400px;
+        background-color: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 3rem;
+    }
+
+    .forget label {
+        display: flex;
+        align-items: center;
+    }
+
+    .forget label input {
+        margin-right: 3px;
+    }
+
+    .forget a:hover {
+        text-decoration: underline;
+    }
+
+    .boton {
+        width: 100%;
+        height: 40px;
+        border-radius: 40px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.4s ease;
+    }
+
+    .tipo {
+        width: 100%;
+        background: none;
+        backdrop-filter: blur(5px);
+        color: black;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .tipo .opti {
+        background: none;
+        backdrop-filter: blur(5px);
+        color: black;
+    }
+
+    .register b {
+        cursor: pointer;
+        text-decoration: dashed;
+    }
+
+    .register b:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<body>
+    <section>
+        <form method="post" action="php/registro.php">
+            <h1>Registro</h1>
+
+            <div class="inputbox">
+                <input type="text" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Solo letras, sin números" required placeholder="Nombre" name="nombre">
+            </div>
+
+            <div class="inputbox">
+                <input type="text" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Solo letras, sin números" required placeholder="Apeidos" name="apeidos">
+            </div>
+
+            <div class="inputbox">
+                <input type="text" pattern="[0-9]+" title="Solo numero, sin letras" required placeholder="Edad" name="edad">
+            </div>
+
+            <div class="inputbox">
+                <input type="text" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Solo letras, sin números" required placeholder="Nacionalidad" name="nacionalidad">
+            </div>
+
+            <select name="tipo" id="" class="tipo">
+                <option class="opti" value="usuario">Usuario</option>
+                <option class="opti" value="empresario">Empresario</option>
+            </select>
+
+            <div class="inputbox">
+                <input type="password" pattern="[0-9]+" title="Solo numero, sin letras" required placeholder="Contraseña" name="contraseña">
+            </div>
+
+            <div class="inputbox">
+                <input type="password" pattern="[0-9]+" title="Solo numero, sin letras" required placeholder="Confirmar contraseña" name="cc">
+            </div>
+
+
+            <input class="boton" type="submit" value="Registrarse" style="border: none;">
+            <br><br>
+
+            <div class="register">
+                <p>Ya tengo cuenta <b class="ref" onclick="regresar()">Iniciar Sesión</b></p>
+            </div>
+            <script>
+                const nombre = document.getElementById('nombre');
+                const apeidos = document.getElementById('apeidos');
+                const edad = document.getElementById('edad');
+                const nacionalidad = document.getElementById('nacionalidad');
+                const contraseña = document.getElementById('contraseña');
+                const cc = document.getElementById('cc');
+
+                nombre.addEventListener('input', () => {
+                    const valor = nombre.value;
+                    if (/\d/.test(valor)) {
+                        nombre.value = valor.replace(/\d/g, '');
+                    }
+                });
+            </script>
+
+        </form>
+    </section>
+
+</body>
+
+</html>

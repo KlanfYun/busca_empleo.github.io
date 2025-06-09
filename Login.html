@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMPLEDOR</title>
+</head>
+
+<style>
+    button:hover {
+        background-color: rgb(255, 255, 255, 0.5);
+    }
+
+    button {
+        border: none;
+    }
+
+    .register {
+        font-size: 0.9rem;
+        color: #fff;
+        text-align: center;
+        margin: 25px 0 10px;
+    }
+
+    .register p a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .register p a:hover {
+        text-decoration: underline;
+    }
+
+    h1 {
+        font-size: 2rem;
+        color: #000000;
+        text-align: center;
+    }
+
+    .inputbox {
+        position: relative;
+        margin: 30px 0;
+        max-width: 310px;
+        border-bottom: 2px solid #fff;
+    }
+
+    .inputbox label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        color: #fff;
+        font-size: 1rem;
+        pointer-events: none;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .inputbox input {
+        width: 100%;
+        height: 60px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 1rem;
+        padding: 0 35px 0 5px;
+        color: #fff;
+    }
+
+    .inputbox ion-icon {
+        position: absolute;
+        right: 8px;
+        color: #000000;
+        font-size: 1.2rem;
+        top: 20px;
+    }
+
+    .forget {
+        margin: 35px 0;
+        font-size: 0.85rem;
+        color: wheat;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'poppins', sans-serif;
+    }
+
+    body {
+        background-image: url(Img/mias/Flux_Dev_Ambiente_empresarial_moderno_sin_presencia_humana_esc_0.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+        background-size: cover;
+    }
+
+    section {
+        max-width: 400px;
+        background-color: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 2px;
+        backdrop-filter: blur(3px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 3rem;
+    }
+
+    .forget a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .forget a:hover {
+        text-decoration: underline;
+    }
+
+    button {
+        width: 100%;
+        height: 40px;
+        border-radius: 40px;
+        background-color: rgb(255, 255, 255, 1);
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.4s ease;
+    }
+
+    .ref:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+      .tipo{
+        width: 100%;
+        background: none;
+        backdrop-filter: blur(5px);
+        color: black;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .tipo .opti{
+        background: none;
+        backdrop-filter: blur(5px);
+        color: black;
+    }
+</style>
+
+<script type="text/javascript">
+    function reg() {
+        window.location = "Registro.html";
+    }
+</script>
+
+<body>
+    <section>
+        <form method="post" action="php/Login.php">
+            <h1>INICIAR SESIÓN</h1>
+            <div class="inputbox">
+                <input type="text" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Solo letras, sin números" required name="Usuario" placeholder="Usuario" style="color: #000000;">
+            </div>
+
+            <select name="tipo" id="" class="tipo">
+                <option class="opti" value="usuario">Usuario</option>
+                <option class="opti" value="empresario">Empresario</option>
+            </select>
+
+            <div class="inputbox">
+                <input pattern="[0-9]+" title="Solo numero, sin letras" type="password" required name="Contraseña" placeholder="Contraseña" style="color: #000000;">
+            </div>
+
+            <button name="iniciar">Iniciar</button>
+
+            <div class="register">
+                <p>No tengo una cuenta <b class="ref" onclick="reg()">Registrate</b></p>
+            </div>
+
+        </form>
+    </section>
+
+</body>
+
+</html>

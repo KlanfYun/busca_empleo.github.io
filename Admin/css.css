@@ -1,0 +1,131 @@
+ body {
+   background-image: url(img/Flux_Dev_A_professional_workspace_set_within_a_calm_dark_turqu_0.jpg) !important;
+   margin: 0;
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+ }
+
+ header {
+   display: grid;
+   justify-content: center;
+   text-align: center;
+ }
+
+ .container-grand {
+    max-width: 700px; /* Establece un ancho máximo */
+    width:100%; /* O puedes usar un valor fijo como 80% */
+    margin: 0 auto; /* Centra el contenedor */
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(30px);
+    margin-bottom: 10px;
+ }
+
+ .container-father {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+ }
+
+ fieldset {
+   border: 1px solid rgb(163, 163, 163);
+ }
+
+        @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      nav {
+        flex-direction: column;
+      }
+    }
+
+
+ .emergente{
+   border: white solid 1px;
+    position: fixed;
+    z-index: 2;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición de opacidad y transformación */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* Escala inicial a 0 para ocultar */
+    min-width: 10px;
+    min-height: 10px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(30px);
+    display: none; /* Cambiar a block cuando se muestre */
+    opacity: 0; /* Opacidad inicial */
+ }
+ .emergente label{
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+ }
+  .btn {
+   margin: 0;
+   background: none;
+   background-color: rgb(147, 189, 226, 0.4);
+   color: white;
+   margin: 5px;
+ }
+
+ .btn:hover {
+   color: black;
+   box-shadow: 0 0 20px rgb(66, 105, 155);
+ }
+ .fondo-blur{
+   position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    z-index: 1;
+    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, 0.1);
+    display: none; /* Cambiar a block cuando se muestre */
+    opacity: 0; /* Opacidad inicial */
+    transition: opacity 0.5s ease; /* Transición de opacidad */
+ }
+
+.p-1.show, .p-2.show,.p-3.show,.p-4.show, .e-1.show{
+    display: block; /* Cambiar a block para mostrar */
+    opacity: 1; /* Opacidad al 100% */
+    transform: translate(-50%, -50%) scale(1); /* Escala normal al mostrar */
+}
+.fondo-blur.show {
+    display: block; /* Cambiar a block para mostrar */
+    opacity: 1; /* Opacidad al 100% */
+}
+
+.over-x{
+	overflow-y: auto;
+}
+ .over-x::-webkit-scrollbar {
+  width: 8px;                 /* Ancho del scroll vertical */
+}
+
+.over-x::-webkit-scrollbar-track {
+  background: #f0f0f000;        /* Fondo de la pista del scroll */
+}
+
+.over-x::-webkit-scrollbar-thumb {
+  background-color: gray;     /* Color del "thumb" (la barra que se mueve) */
+  border-radius: 4px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.ju-grid{
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
